@@ -1,4 +1,4 @@
 package com.assignment.FC;
 
-public class Registration {
+public class CustomerLogic {
 }

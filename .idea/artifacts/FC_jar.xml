@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FC:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FC_jar</output-path>
+    <root id="archive" name="FC.jar">
+      <element id="module-output" name="FC" />
+    </root>
+  </artifact>
+</component>

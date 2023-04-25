@@ -29,7 +29,7 @@ public class MainFrame {
     }
 
     public void viewMenuByFitnessType(){
-        System.out.println("Select the available Fitness Types (Yoga/Spin/Pilates/Crossfit/Boxing)");
+        System.out.println("Select the available Fitness Types (Football/Tennis/Cycling/BoxFit/Swimming)");
         String fitnessTypeSelected = scanner.nextLine().trim();
         System.out.printf("%-10s %-10s %-10s %-10s %-10s \n", "Lesson", "Day", "Weekend", "Spot Left", "Price");
         for (SessionLogic lesson : session) {
@@ -400,7 +400,6 @@ public class MainFrame {
                 System.out.println("3. Attend a lesson");
                 System.out.println("4. Display report");
                 System.out.println("5. Exit WFC");
-                System.out.println("6. view bookingDbArray");
                 int customerChoice = scanner.nextInt();
                 scanner.nextLine();
 
@@ -429,11 +428,6 @@ public class MainFrame {
                     case 5:
                         System.out.println("Bye. See you later.");
                         return;
-
-                    case 6:
-                        // View db
-                        viewBookingDBArray();
-                        break;
 
                     default:
                         System.out.println("Invalid choice. Please enter a number from 1 to 8.");

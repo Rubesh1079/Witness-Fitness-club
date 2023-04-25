@@ -149,22 +149,22 @@ public class SystemLogic {
     }
 
 
-    public void printMonthlyChampionReport(int month) {
-        HashMap<String, Integer> map = new HashMap<>();
-        for (BookingFrame booking : bookingssDbArray) {
-            String fitnessType = booking.getLesson().getFitnessType();
-            if (map.containsKey(fitnessType)) {
-                int income = map.get(fitnessType);
-                income += booking.getLesson().getPrice();
-                map.put(fitnessType, income);
-            } else {
-                map.put(fitnessType, booking.getLesson().getPrice());
-            }
-        }
-        System.out.println("Monthly Champion Report for Month " + month);
-        for (String key : map.keySet()) {
-            System.out.println("Fitness Type: " + key + " Income: " + map.get(key));
-        }
+//    public void printMonthlyChampionReport(int month) {
+//        HashMap<String, Integer> map = new HashMap<>();
+//        for (BookingFrame booking : bookingssDbArray) {
+//            String fitnessType = booking.getLesson().getFitnessType();
+//            if (map.containsKey(fitnessType)) {
+//                int income = map.get(fitnessType);
+//                income += booking.getLesson().getPrice();
+//                map.put(fitnessType, income);
+//            } else {
+//                map.put(fitnessType, booking.getLesson().getPrice());
+//            }
+//        }
+//        System.out.println("Monthly Champion Report for Month " + month);
+//        for (String key : map.keySet()) {
+//            System.out.println("Fitness Type: " + key + " Income: " + map.get(key));
+//        }
 
 
         public void printChampionReport(int monthNumber) {
@@ -181,7 +181,7 @@ public class SystemLogic {
                     map.put(fitnessType, booking.getLesson().getPrice());
                 }
             }
-        }
+
             int maxIncome = 0;
             String championFitnessType = "";
             for (String key : map.keySet()) {
@@ -191,6 +191,8 @@ public class SystemLogic {
                 }
             }
             System.out.println("Champion is " + championFitnessType);
+        }
+
 
         }
     }

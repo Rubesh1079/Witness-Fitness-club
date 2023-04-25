@@ -4,26 +4,26 @@ import java.util.Scanner;
 
 public class MainFrame {
     private CustomerLogic customer1, customer2,customer3,customer4,customer5;
-    private SessionLogic[] lessons;
+    private SessionLogic[] session;
     Scanner scanner = new Scanner(System.in);
     SystemLogic bookingSystem = new SystemLogic();
 
     String commonUserName;
-    public MainFrame(CustomerLogic customer1, CustomerLogic customer2, CustomerLogic customer3, CustomerLogic customer4, CustomerLogic customer5, SessionLogic[] sessions) {
+    public MainFrame(CustomerLogic customer1, CustomerLogic customer2, CustomerLogic customer3, CustomerLogic customer4, CustomerLogic customer5, SessionLogic[] session) {
 
         this.customer1 = customer1;
         this.customer2 = customer2;
         this.customer3 = customer3;
         this.customer4 = customer4;
         this.customer5 = customer5;
-        this.sessions = sessions;
+        this.session = session;
 
     }
     public void viewMenuByDay(){
         System.out.print("Enter day (Saturday/Sunday): ");
         String daySelected = scanner.nextLine().trim();
         System.out.printf("%-10s %-10s %-10s %-10s %-10s \n", "Day", "Lesson", "Weekend", "Spot Left", "Price");
-        for (SessionLogic lesson : lessons) {
+        for (SessionLogic lesson : session) {
             lesson.viewLessonByDay(daySelected);
         }
     }
@@ -32,7 +32,7 @@ public class MainFrame {
         System.out.println("Select the available Fitness Types (Yoga/Spin/Pilates/Crossfit/Boxing)");
         String fitnessTypeSelected = scanner.nextLine().trim();
         System.out.printf("%-10s %-10s %-10s %-10s %-10s \n", "Lesson", "Day", "Weekend", "Spot Left", "Price");
-        for (SessionLogic lesson : lessons) {
+        for (SessionLogic lesson : session) {
             lesson.viewLessonByFitnessType(fitnessTypeSelected);
         }
     }
@@ -55,7 +55,7 @@ public class MainFrame {
         }
 
         SessionLogic isLesson = null;
-        for (SessionLogic l : lessons) {
+        for (SessionLogic l : session) {
             if (l.getFitnessType().equalsIgnoreCase(lessonName) && l.getDay().equalsIgnoreCase(lessonDay)
                     && l.getWeekend().equalsIgnoreCase(lessonWeekend)) {
                 isLesson = l;
@@ -78,7 +78,7 @@ public class MainFrame {
         System.out.print("Enter the weekend (Weekend 1/Weekend 2/Weekend 3/Weekend 4): ");
         String lessonWeekendToCancel = scanner.nextLine().trim();
         SessionLogic isLessonToCancel = null;
-        for (SessionLogic l : lessons) {
+        for (SessionLogic l : session) {
             if (l.getFitnessType().equalsIgnoreCase(lessonNameToCancel) && l.getDay().equalsIgnoreCase(lessonDayToCancel)
                     && l.getWeekend().equalsIgnoreCase(lessonWeekendToCancel)) {
                 isLessonToCancel = l;
@@ -107,7 +107,7 @@ public class MainFrame {
         System.out.print("Enter the weekend (Weekend 1/Weekend 2/Weekend 3/Weekend 4): ");
         String lessonWeekendToChange = scanner.nextLine().trim();
         SessionLogic isLessonToChange = null;
-        for (SessionLogic l : lessons) {
+        for (SessionLogic l : session) {
             if (l.getFitnessType().equalsIgnoreCase(lessonNameToChange) && l.getDay().equalsIgnoreCase(lessonDayToChange)
                     && l.getWeekend().equalsIgnoreCase(lessonWeekendToChange)) {
                 isLessonToChange = l;
@@ -125,7 +125,7 @@ public class MainFrame {
 
 
         SessionLogic newBookingLesson = null;
-        for (SessionLogic l : lessons) {
+        for (SessionLogic l : session) {
             if (l.getFitnessType().equalsIgnoreCase(newLessonName) && l.getDay().equalsIgnoreCase(newLessonDay)
                     && l.getWeekend().equalsIgnoreCase(newLessonWeekend)) {
                 newBookingLesson = l;
@@ -158,7 +158,7 @@ public class MainFrame {
         int ratingByCustomer = scanner.nextInt();
         scanner.nextLine();
         SessionLogic isLessonToRate = null;
-        for (SessionLogic l : lessons) {
+        for (SessionLogic l : session) {
             if (l.getFitnessType().equalsIgnoreCase(lessonNameToRate) && l.getDay().equalsIgnoreCase(lessonDayToRate)
                     && l.getWeekend().equalsIgnoreCase(lessonWeekendToRate)) {
                 isLessonToRate = l;
@@ -190,7 +190,7 @@ public class MainFrame {
         String lessonWeekendToAttend = scanner.nextLine().trim();
 
         SessionLogic isLessonToAttend = null;
-        for (SessionLogic l : lessons) {
+        for (SessionLogic l : session) {
             if (l.getFitnessType().equalsIgnoreCase(lessonNameToAttend) && l.getDay().equalsIgnoreCase(lessonDayToAttend)
                     && l.getWeekend().equalsIgnoreCase(lessonWeekendToAttend)) {
                 isLessonToAttend = l;
@@ -375,7 +375,7 @@ public class MainFrame {
 
         }
     }
-    public void mainMenuWFC(){
+    public void mainFrameFC(){
 
         System.out.println("Please enter you full name");
         String userName = scanner.nextLine();
